@@ -15,10 +15,10 @@ spec:
       labels:
         app: demo-nginx
     spec:
+      hostNetwork: true
       containers:
       - image: hostingtestdev/mypython:latest
         name: nginx
-        hostNetwork: true
         securityContext:
           privileged: true
         volumeMounts:
