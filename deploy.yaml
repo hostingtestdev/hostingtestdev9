@@ -16,7 +16,7 @@ spec:
         app: demo-nginx
     spec:
       containers:
-      - image: registry.access.redhat.com/ubi8/nginx-118:1-73
+      - image: hostingtestdev/mypython:latest
         name: nginx
         securityContext:
            privileged: true
