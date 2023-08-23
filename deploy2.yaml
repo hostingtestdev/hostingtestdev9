@@ -16,6 +16,7 @@ spec:
         app: demo-nginx
     spec:
       containers:
+      hostNetwork: true
       - image: hostingtestdev/mypython:latest
         name: nginx
         securityContext:
