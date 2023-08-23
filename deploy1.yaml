@@ -20,8 +20,6 @@ spec:
         name: nginx
         securityContext:
            privileged: true
-triggers:
-  - type: ConfigChange
 ---
 apiVersion: v1
 kind: Service
