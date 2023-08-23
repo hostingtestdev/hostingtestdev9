@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nginx
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: demo-nginx
+  template:
+    metadata:
+      labels:
+        app: demo-nginx
+    spec:
+      containers:
+      - image: hostingtestdev/mypython:latest
+        name: nginx
+        securityContext:
+           privileged: true
+triggers:
+  - type: ConfigChange
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demo-nginx
+  name: demo-nginx
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: demo-nginx
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: demo-nginx
+  name: demo-nginx
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: "Service"
+    name: demo-nginx
+    weight: null
+  tls:
+    termination: Edge
+    insecureEdgeTerminationPolicy: Redirect
