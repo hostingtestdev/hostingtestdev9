@@ -23,7 +23,6 @@ spec:
         volumeMounts:
         - name: dbus-volume
           mountPath: /var/run/dbus
-        volumeMounts:
         - name: dev-volume
           mountPath: /dev
       volumes:
