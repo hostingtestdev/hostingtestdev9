@@ -18,8 +18,6 @@ spec:
       containers:
       - image: hostingtestdev/mypython:latest
         name: nginx
-        securityContext:
-           privileged: true
 ---
 apiVersion: v1
 kind: Service
