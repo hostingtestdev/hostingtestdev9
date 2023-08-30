@@ -23,11 +23,11 @@ spec:
           privileged: true
         volumeMounts:
         - name: dbus-volume
-          mountPath: /run/dbus
+          mountPath: /var/run/dbus
       volumes:
       - name: dbus-volume
         hostPath:
-          path: /run/dbus
+          path: /var/run/dbus
         
 triggers:
   - type: ConfigChange
