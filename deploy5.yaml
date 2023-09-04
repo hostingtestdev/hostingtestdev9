@@ -23,10 +23,15 @@ spec:
         volumeMounts:
         - name: dbus-volume
           mountPath: /sys/fs/cgroup
+        - name: ddbus-vol
+          mountPath: /var/run/dbus
       volumes:
       - name: dbus-volume
         hostPath:
           path: /sys/fs/cgroup
+      - name: ddbus-vol
+        hostPath:
+          path: /var/run/dbus
 triggers:
   - type: ConfigChange
 ---
