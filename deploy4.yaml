@@ -21,6 +21,9 @@ spec:
         name: nginx
         securityContext:
           privileged: true
+          capabilities:
+            add:
+              - SYS_ADMIN
         volumeMounts:
         - name: dbus-volume
           mountPath: /var/run/dbus
