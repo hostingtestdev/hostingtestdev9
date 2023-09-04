@@ -25,16 +25,12 @@ spec:
             add:
               - SYS_ADMIN
         volumeMounts:
-        - name: dbus-volume
-          mountPath: /var/run/dbus
         - name: dongle-volume
           mountPath: /dev/bus/usb/001/003
       volumes:
-      - name: dbus-volume
-        hostPath:
-          path: /var/run/dbus
       - name: dongle-volume
-        mountPath: /dev/bus/usb/001/003
+        hostPath: 
+          path: /dev/bus/usb/001/003
         
 triggers:
   - type: ConfigChange
