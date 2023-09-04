@@ -21,10 +21,6 @@ spec:
         name: nginx
         securityContext:
           privileged: true
-          capabilities:
-            add:
-              - SYS_ADMIN
-              - NET_ADMIN
         
 triggers:
   - type: ConfigChange
