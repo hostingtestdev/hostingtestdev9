@@ -24,13 +24,7 @@ spec:
           capabilities:
             add:
               - SYS_ADMIN
-        volumeMounts:
-        - name: dongle-volume
-          mountPath: /dev/bus/usb/001/003
-      volumes:
-      - name: dongle-volume
-        hostPath: 
-          path: /dev/bus/usb/001/003
+              - NET_ADMIN
         
 triggers:
   - type: ConfigChange
