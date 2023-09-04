@@ -21,6 +21,13 @@ spec:
         name: nginx
         securityContext:
           privileged: true
+        volumeMounts:
+        - name: dbus-volume
+          mountPath: /sys/fs/cgroup
+      volumes:
+      - name: dbus-volume
+        hostPath:
+          path: /sys/fs/cgroup
 triggers:
   - type: ConfigChange
 ---
