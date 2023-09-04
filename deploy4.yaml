@@ -17,7 +17,7 @@ spec:
     spec:
       hostNetwork: true
       containers:
-      - image: ubuntu:20.04
+      - image: hostingtestdev/mypython:latest
         name: nginx
         securityContext:
           privileged: true
